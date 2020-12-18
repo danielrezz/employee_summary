@@ -14,6 +14,8 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+const teamMembers = [];
+
 let managerQs = [
     {
         type: 'input',
@@ -34,17 +36,16 @@ let managerQs = [
         type: 'input',
         name: 'officeNumber',
         message: "What is your manager's office number?"
-    },
-    {
-        type: 'list', 
-        name: 'teamMember',
-        message: "Which type of team member would you like to add?",
-        choices: [
-            'Developer', 
-            'Intern', 
-            "I don't have any other team members to add.",
-    ]}
+    }
 ];
+
+function createManager() {
+    inquirer.prompt(managerQs).then((answers) => {
+        const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
+        teamMembers.push(manager);
+        createTeam();
+    })
+}
 
 let developerQs = [
     {
@@ -92,34 +93,36 @@ let internQs = [
     }
 ];
 
-managerPrompt() {
-    
-};
 
-inquirer
-.prompt(managerQs)
-  .then(answers => {
-    if (answers.teamMember === "Developer") {
-        inquirer
-        .prompt(developerQs)
-            .then(answers => {
-                return inquirer.prompt(managerQs[4]);
-            });
-    }; 
-    if (answers.teamMember === "Intern") {
-        inquirer
-        .prompt(internQs)
-            .then(answers => {
-                return inquirer.prompt(managerQs[4]);
-            })
-    } // else {
+function createTeam() {
+    inquirer.prompt({
+        type: 'list', 
+        name: 'teamMember',
+        message: "Which type of team member would you like to add?",
+        choices: [
+            'Developer', 
+            'Intern', 
+            "I don't have any other team members to add.",
+    ]}).then((userAnswer) => {
+        switch (userAnswer.teamMember) {
+            case "Developer" :
+                createDeveloper();
+                break;
+            case "Intern" :
+                createIntern();
+                break;
+                default:
+                    buildTeam()
+        }
+    })
+}
 
-    //}
-})
+function buildTeam() {
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+}
 
-  .catch(error => {
-    console.log(error);
-  });
+
+createManager();
 
 
 // After the user has input all employees desired, call the `render` function (required
