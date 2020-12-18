@@ -92,17 +92,29 @@ let internQs = [
     }
 ];
 
+managerPrompt() {
+    
+};
+
 inquirer
 .prompt(managerQs)
   .then(answers => {
-    console.log(answers);
+    if (answers.teamMember === "Developer") {
+        inquirer
+        .prompt(developerQs)
+            .then(answers => {
+                return inquirer.prompt(managerQs[4]);
+            });
+    }; 
+    if (answers.teamMember === "Intern") {
+        inquirer
+        .prompt(internQs)
+            .then(answers => {
+                return inquirer.prompt(managerQs[4]);
+            })
+    } // else {
 
-    // let generateTemplate = createTemplate(answers);
-
-    // fs.writeFile("yourProjectREADME.md", generateTemplate, licenseBadge, (err) => {
-    //     if (err) throw err;
-    //     console.log("You now have the best README ever.");
-    // });
+    //}
 })
 
   .catch(error => {
