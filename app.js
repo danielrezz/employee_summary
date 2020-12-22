@@ -44,8 +44,24 @@ function createManager() {
         const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
         teamMembers.push(manager);
         createTeam();
-    })
-}
+    });
+};
+
+function createEngineer() {
+    inquirer.prompt(engineerQs).then((answers) => {
+        const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github)
+        teamMembers.push(engineer);
+        createTeam();
+    });
+};
+
+function createIntern() {
+    inquirer.prompt(internQs).then((answers) => {
+        const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
+        teamMembers.push(intern);
+        createTeam();
+    });
+};
 
 let engineerQs = [
     {
@@ -88,8 +104,8 @@ let internQs = [
     },
     {
         type: 'input',
-        name: 'twitter',
-        message: "What is your intern's twitter handle?"
+        name: 'school',
+        message: "What university does your intern attend?"
     }
 ];
 
@@ -106,10 +122,10 @@ function createTeam() {
     ]}).then((userAnswer) => {
         switch (userAnswer.teamMember) {
             case "Engineer" :
-                // createEngineer();
+                createEngineer();
                 break;
             case "Intern" :
-                // createIntern();
+                createIntern();
                 break;
                 default:
                     buildTeam()

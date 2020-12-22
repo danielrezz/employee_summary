@@ -1,21 +1,26 @@
 <div class="card column m-6">
     <div class="card-content">
     <p class="title">
-        Rosy Stacks
+        {{ name }}
     </p>
     <p class="subtitle">
-        Manager
+        {{ role }}
     </p>
     </div>
     <footer class="card-footer">
     <p class="card-footer-item">
         <span>
-        ID # 
+        ID: {{ id }} 
         </span>
     </p>
     <p class="card-footer-item">
         <span>
-        Office Number: 
+        Email: <a href="" class="has-text-primary">{{ email }}</a>
+        </span>
+    </p>
+    <p class="card-footer-item">
+        <span>
+        Office#: {{ officeNumber }}
         </span>
     </p>
     </footer>
