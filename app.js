@@ -1,5 +1,5 @@
 const Manager = require("./lib/Manager");
-const Developer = require("./lib/Developer");
+const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
@@ -47,26 +47,26 @@ function createManager() {
     })
 }
 
-let developerQs = [
+let engineerQs = [
     {
         type: 'input',
         name: 'name',
-        message: "What is your developer's name?"
+        message: "What is your engineer's name?"
     },
     {
         type: 'input',
         name: 'id',
-        message: "What is your developer's ID number?"
+        message: "What is your engineer's ID number?"
     },
     {
         type: 'input',
         name: 'email',
-        message: "What is your developer's email address?"
+        message: "What is your engineer's email address?"
     },
     {
         type: 'input',
         name: 'github',
-        message: "What is your developer's GitHub username?"
+        message: "What is your engineer's GitHub username?"
     }
 ];
 
@@ -100,16 +100,16 @@ function createTeam() {
         name: 'teamMember',
         message: "Which type of team member would you like to add?",
         choices: [
-            'Developer', 
+            'Engineer', 
             'Intern', 
             "I don't have any other team members to add.",
     ]}).then((userAnswer) => {
         switch (userAnswer.teamMember) {
-            case "Developer" :
-                createDeveloper();
+            case "Engineer" :
+                // createEngineer();
                 break;
             case "Intern" :
-                createIntern();
+                // createIntern();
                 break;
                 default:
                     buildTeam()

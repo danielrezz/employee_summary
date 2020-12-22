@@ -1,4 +1,4 @@
-<div class="card employee-card">
+<!-- <div class="card employee-card">
     <div class="card-header">
         <h2 class="card-title">{{ name }}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>{{ role }}</h3>
@@ -10,4 +10,32 @@
             <li class="list-group-item">GitHub: <a href="https://github.com/{{ github }}" target="_blank" rel="noopener noreferrer">{{ github }}</a></li>
         </ul>
     </div>
+</div> -->
+
+<div class="card column m-6">
+    <div class="card-content">
+    <p class="title">
+        {{ name }}
+    </p>
+    <p class="subtitle">
+        {{ role }}
+    </p>
+    </div>
+    <footer class="card-footer">
+    <p class="card-footer-item">
+        <span>
+        ID: {{ id }} 
+        </span>
+    </p>
+    <p class="card-footer-item">
+        <span>
+        Email: {{ email }} 
+        </span>
+    </p>
+    <p class="card-footer-item">
+        <span>
+            Github: <a href="https://github.com/danielrezz" class="has-text-primary">{{ github }}</a>
+        </span>
+    </p>
+    </footer>
 </div>

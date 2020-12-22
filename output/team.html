@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Team</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c502137733.js"></script>
-</head>
-
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
-                <h1 class="text-center">My Team</h1>
-            </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="hero is-medium is-primary is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title is-size-1">
+              The Dream Team!
+            </h1>
+            <h2 class="subtitle is-size-3 pl-5">
+              Employee Summary
+            </h2>
+          </div>
         </div>
+    </section>
+
+    <div class="columns is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd">
+
+        <div class="card column m-6">
+    <div class="card-content">
+    <p class="title">
+        Rosy Stacks
+    </p>
+    <p class="subtitle">
+        Manager
+    </p>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
-                <div class="card employee-card">
-    <div class="card-header">
-        <h2 class="card-title">asd</h2>
-        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item">ID: asd</li>
-            <li class="list-group-item">Email: <a href="mailto:asd">asd</a></li>
-            <li class="list-group-item">Office number: asd</li>
-        </ul>
-    </div>
+    <footer class="card-footer">
+    <p class="card-footer-item">
+        <span>
+        ID # 
+        </span>
+    </p>
+    <p class="card-footer-item">
+        <span>
+        Office Number: 
+        </span>
+    </p>
+    </footer>
 </div>
 
-            </div>
-        </div>
-    </div>
-</body>
 
+    </div>
+  </body>
 </html>
