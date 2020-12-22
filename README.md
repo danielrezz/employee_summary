@@ -23,7 +23,7 @@
 </p>
 <br>
 <p>
-    Once you invoke the app, you will be prompted with a series of questions regarding your team. Provide the applicable informaiton based on your team member's role and your answers will populate in the appropriate fields. When you've made your way through the questions, you will receive a success message with a file titled {team.html}.
+    Once you invoke the app, you will be prompted with a series of questions regarding your team. Provide the applicable informaiton based on your team member's role and your answers will populate in the appropriate fields. When you've made your way through the questions, you will receive a success message with a file titled team.html.
 
 </p>
 
