@@ -39,30 +39,6 @@ let managerQs = [
     }
 ];
 
-function createManager() {
-    inquirer.prompt(managerQs).then((answers) => {
-        const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
-        teamMembers.push(manager);
-        createTeam();
-    });
-};
-
-function createEngineer() {
-    inquirer.prompt(engineerQs).then((answers) => {
-        const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github)
-        teamMembers.push(engineer);
-        createTeam();
-    });
-};
-
-function createIntern() {
-    inquirer.prompt(internQs).then((answers) => {
-        const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
-        teamMembers.push(intern);
-        createTeam();
-    });
-};
-
 let engineerQs = [
     {
         type: 'input',
@@ -109,6 +85,29 @@ let internQs = [
     }
 ];
 
+function createManager() {
+    inquirer.prompt(managerQs).then((answers) => {
+        const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
+        teamMembers.push(manager);
+        createTeam();
+    });
+};
+
+function createEngineer() {
+    inquirer.prompt(engineerQs).then((answers) => {
+        const engineer = new Engineer (answers.name, answers.id, answers.email, answers.github)
+        teamMembers.push(engineer);
+        createTeam();
+    });
+};
+
+function createIntern() {
+    inquirer.prompt(internQs).then((answers) => {
+        const intern = new Intern (answers.name, answers.id, answers.email, answers.school)
+        teamMembers.push(intern);
+        createTeam();
+    });
+};
 
 function createTeam() {
     inquirer.prompt({
@@ -135,6 +134,7 @@ function createTeam() {
 
 function buildTeam() {
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+    console.log("Your team page has been successfully generated!");
 }
 
 
