@@ -7,7 +7,7 @@
 </h2>
 
 <p>
-    This is a team page generator designed to list all members of your development team in a clean way. The webpage is created via command-line based on user input. You can view a demo video on its functionality <a href="">HERE</a>.
+    This is a team page generator designed to list all members of your development team in a clean way. The webpage is created via command-line based on user input. You can view a demo video on its functionality <a href="https://youtu.be/oizfz1Y1t_I">HERE</a>.
 </p>
 
 <img src="Screen Shot 2020-12-21 at 11.17.04 PM.png">
@@ -23,7 +23,7 @@
 </p>
 <br>
 <p>
-    Once you invoke the app, you will be prompted with a series of questions regarding your team. Provide the applicable informaiton based on your team member's role and your answers will populate in the appropriate fields. When you've made your way through the questions, you will receive a success message with a file titled <team.html>!
+    Once you invoke the app, you will be prompted with a series of questions regarding your team. Provide the applicable informaiton based on your team member's role and your answers will populate in the appropriate fields. When you've made your way through the questions, you will receive a success message with a file titled team.html.
 
 </p>
 
